@@ -23,6 +23,7 @@ https://www.arduino.cc/en/Main/OldSoftwareReleases
 
 # Physical Connections  
 ![alt text](https://camo.githubusercontent.com/a912641249173768ae60670e843c62294d06da4f/68747470733a2f2f656c656374726f2e636c75622f646174612f666f72756d2f6d657373616765732f34323633312f696d616765732f31313636302d313238302e6a7067)  
+Pull up resistors might be necessary for SDA and SCL inputs if the screen freezes after a few seconds.
 
 # Updating M365 firmware / Disabling the Dashboard
 Turn on the scooter and immediately engage and hold the throttle and brake before the logo disappears from the dashboard LCD. You will enter on dashboard disabled mode.
