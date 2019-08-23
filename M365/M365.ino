@@ -285,7 +285,7 @@ void displayFSM() {
     }
 
     if (M365Settings) {
-      if ((throttleVal == 1) && (oldThrottleVal != 1) && (brakeVal == -1) && (oldBrakeVal == -1))                // brake min + throttle max = change menu value
+      if ((throttleVal == 1) && (oldThrottleVal != 1) && (brakeVal != 1) && (oldBrakeVal != 1))                // brake min + throttle max = change menu value
       switch (sMenuPos) {
         case 0:
           cfgCruise = !cfgCruise;
@@ -345,7 +345,7 @@ void displayFSM() {
           M365Settings = false;
           break;
       } else
-      if ((brakeVal == 1) && (oldBrakeVal != 1) && (throttleVal == -1) && (oldThrottleVal == -1)) {               // brake max + throttle min = change menu position
+      if ((brakeVal == 1) && (oldBrakeVal != 1) && (throttleVal != 1) && (oldThrottleVal != 1)) {               // brake max + throttle min = change menu position
         if (sMenuPos < 7)
           sMenuPos++;
           else
@@ -463,7 +463,7 @@ void displayFSM() {
       return;
     } else
     if (ShowBattInfo) {
-      if ((brakeVal == 1) && (oldBrakeVal != 1) && (throttleVal == -1) && (oldThrottleVal == -1)) {
+      if ((brakeVal == 1) && (oldBrakeVal != 1) && (throttleVal != 1) && (oldThrottleVal != 1)) {
         oldBrakeVal = brakeVal;
         oldThrottleVal = throttleVal;
         timer = millis() + LONG_PRESS;
@@ -482,13 +482,13 @@ void displayFSM() {
       return;
     } else
     if (Settings) {
-      if ((brakeVal == 1) && (oldBrakeVal == 1) && (throttleVal == -1) && (oldThrottleVal == -1) && (timer != 0))
+      if ((brakeVal == 1) && (oldBrakeVal == 1) && (throttleVal != 1) && (oldThrottleVal != 1) && (timer != 0))
         if (millis() > timer) {
           Settings = false;
           return;
         }
 
-      if ((throttleVal == 1) && (oldThrottleVal != 1) && (brakeVal == -1) && (oldBrakeVal == -1))                // brake min + throttle max = change menu value
+      if ((throttleVal == 1) && (oldThrottleVal != 1) && (brakeVal != 1) && (oldBrakeVal != 1))                // brake min + throttle max = change menu value
       switch (menuPos) {
         case 0:
           autoBig = !autoBig;
@@ -534,7 +534,7 @@ void displayFSM() {
           Settings = false;
           break;
       } else
-      if ((brakeVal == 1) && (oldBrakeVal != 1) && (throttleVal == -1) && (oldThrottleVal == -1)) {               // brake max + throttle min = change menu position
+      if ((brakeVal == 1) && (oldBrakeVal != 1) && (throttleVal != 1) && (oldThrottleVal != 1)) {               // brake max + throttle min = change menu position
         if (menuPos < 6)
           menuPos++;
           else
@@ -656,7 +656,7 @@ void displayFSM() {
  
       return;
     } else
-    if ((throttleVal == 1) && (oldThrottleVal != 1) && (brakeVal == -1) && (oldBrakeVal == -1)) {
+    if ((throttleVal == 1) && (oldThrottleVal != 1) && (brakeVal != 1) && (oldBrakeVal != 1)) {
       displayClear(3);
 
       display.set1X();
