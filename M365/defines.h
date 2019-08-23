@@ -20,7 +20,7 @@
   #include "SSD1306AsciiWire.h"
 #endif
 #include "fonts/m365.h"
-#if Language == RU
+#ifdef LANG_RU
   #include "fonts/System5x7ru.h"
 #else
   #include "fonts/System5x7mod.h"
