@@ -247,7 +247,7 @@ void displayFSM() {
  
   m365_info.sph = (uint32_t) abs(_speed) / 1000L; // speed (GOOD)
   m365_info.spl = (uint16_t) c_speed % 1000 / 100;
-  #ifdef US_Version
+  #ifdef Miles_Units
      m365_info.sph = m365_info.sph/1.609;
      m365_info.spl = m365_info.spl/1.609;
   #endif
@@ -772,9 +772,10 @@ void displayFSM() {
         m365_info.Min = S23C3A.ridingTime / 60;         //riding time
         m365_info.Sec = S23C3A.ridingTime % 60;
         m365_info.temp = S23CB0.mainframeTemp / 10;     //temperature
-	#ifdef US_Version
+	#ifdef Miles_Units
           m365_info.milh = m365_info.milh/1.609;
           m365_info.mill = m365_info.mill/1.609;
+        #ifdef Fahrenheit_Units
           m365_info.temp = m365_info.temp*9/5+32;
   #endif
         display.set1X();

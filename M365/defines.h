@@ -4,7 +4,9 @@
 //#define DISPLAY_SPI
 #define DISPLAY_I2C
 
-//#define US_Version
+//#define Miles_Units         // Uncomment for miles speed and distance units
+//#define Fahrenheit_Units    // Uncomment for fahrenheit units
+
 
 #include "SSD1306Ascii.h"
 #ifdef DISPLAY_SPI
