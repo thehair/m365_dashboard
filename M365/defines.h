@@ -1,8 +1,8 @@
 #include "WatchDog.h"
 
 // Select either SPI or I2C(Wire) Display Mode
-#define DISPLAY_SPI
-//#define DISPLAY_I2C
+//#define DISPLAY_SPI
+#define DISPLAY_I2C
 
 //#define US_Version
 
@@ -31,7 +31,7 @@
 #include <EEPROM.h>
 
 #include "language.h"
-#include "messages.h" 
+#include "messages.h"
 
 MessagesClass Message;
 
@@ -49,7 +49,7 @@ bool M365Settings = false;
 uint8_t menuPos = 0;
 uint8_t sMenuPos = 0;
 
-bool cfgCruise = false;
+bool cfgCruise = true;
 bool cfgTailight = false;
 uint8_t cfgKERS = 0;
 
@@ -58,7 +58,7 @@ volatile uint8_t oldThrottleVal = -1;
 volatile bool btnPressed = false;
 bool bAlarm = false;
 
-uint32_t timer = 0; 
+uint32_t timer = 0;
 
 #ifdef DISPLAY_SPI
 SSD1306AsciiSpi display;
@@ -67,7 +67,7 @@ SSD1306AsciiSpi display;
 SSD1306AsciiWire display;
 #endif
 
-bool WheelSize = true; //whell 8,5"
+bool WheelSize = false; //whell 8,5"
 
 uint8_t WDTcounts = 0;
 void(* resetFunc) (void) = 0;
@@ -192,7 +192,7 @@ struct __attribute__((packed))A23C23 { //skip
   uint8_t u2;
   uint8_t u3; //0x30
   uint8_t u4; //0x09
-  uint16_t  remainMileage;  // /100 
+  uint16_t  remainMileage;  // /100
 } S23C23;
 
 struct __attribute__((packed))A23C3A {
