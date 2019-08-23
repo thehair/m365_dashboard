@@ -775,9 +775,10 @@ void displayFSM() {
 	#ifdef Miles_Units
           m365_info.milh = m365_info.milh/1.609;
           m365_info.mill = m365_info.mill/1.609;
+        #endif
         #ifdef Fahrenheit_Units
           m365_info.temp = m365_info.temp*9/5+32;
-  #endif
+        #endif
         display.set1X();
         display.setFont(stdNumb);
         display.setCursor(0, 0);
